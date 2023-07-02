@@ -5,7 +5,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["create-vite-ts"],
+  "keywords": [
+    "create-vite-ts"
+  ],
   "author": "Patrick Ineichen",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nx": "^16.4.2"
+  }
 }
