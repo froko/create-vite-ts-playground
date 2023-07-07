@@ -1,15 +1,15 @@
 {
   "name": "create-vite-ts-playground",
   "version": "1.0.0",
+  "author": "Patrick Ineichen",
+  "license": "MIT",
   "description": "Project holder for different permutations of create-vite-ts projects",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "create-vite-ts"
   ],
-  "author": "Patrick Ineichen",
-  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "nx": "^16.4.2"
   }
