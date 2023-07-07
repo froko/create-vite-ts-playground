@@ -8,7 +8,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview --port 3000",
     "cypress": "run-p start cypress:open",
-    "cypress:ci": "npm run build && run-p -r preview cypress:run",
+    "cypress:ci": "npm run build && run-p -rs preview cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --spec 'cypress/e2e/*.cy.ts'",
     "storybook": "storybook dev -p 6006"
