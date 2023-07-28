@@ -27,7 +27,7 @@
   class="mx-auto mt-4 grid max-w-6xl grid-flow-row gap-4 p-4 lg:grid-flow-col lg:grid-cols-3"
 >
   {#each products as product}
-    <ProductSatisfaction product="{product}" on:productRatingChange="{handeProductRatingChange}" />
+    <ProductSatisfaction {product} on:productRatingChange="{handeProductRatingChange}" />
   {/each}
   <OverallSatisfaction rating="{overallRating}" />
 </main>

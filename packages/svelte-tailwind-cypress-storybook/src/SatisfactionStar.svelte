@@ -23,9 +23,9 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div data-testid="{dataTestId}" on:click="{handleStarClick}">
+<div data-testid="{dataTestId}" role="button" tabindex="0" on:click="{handleStarClick}">
   <Icon
-    icon="{icon}"
+    {icon}
     role="presentation"
     class="text-3xl {checked ? 'text-orange-500' : ''} {clickable
       ? 'cursor-pointer hover:text-orange-700'
