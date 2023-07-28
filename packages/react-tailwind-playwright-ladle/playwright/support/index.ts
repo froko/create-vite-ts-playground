@@ -1,7 +1,10 @@
 import { Locator, expect, Page } from '@playwright/test';
 
 export class SatisfactionStarLocator {
-  constructor(private readonly component: Locator | Page, private readonly productId: string) {}
+  constructor(
+    private readonly component: Locator | Page,
+    private readonly productId: string
+  ) {}
 
   click = async (position: number) => {
     const star = this.getStar(position);
