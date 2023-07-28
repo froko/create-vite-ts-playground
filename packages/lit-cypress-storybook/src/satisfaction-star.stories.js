@@ -14,13 +14,14 @@ export default {
       action: 'star-click'
     }
   },
-  render: (args) => html`<satisfaction-star
-    product-id=${args.productId}
-    position=${args.position}
-    ?checked=${args.checked}
-    ?clickable=${args.clickable}
-    @star-click=${args.starClick}
-  ></satisfaction-star>`
+  render: (args) =>
+    html`<satisfaction-star
+      product-id=${args.productId}
+      position=${args.position}
+      ?checked=${args.checked}
+      ?clickable=${args.clickable}
+      @star-click=${args.starClick}
+    ></satisfaction-star>`
 };
 
 export const Default = {};

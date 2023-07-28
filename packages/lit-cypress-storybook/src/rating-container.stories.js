@@ -13,12 +13,13 @@ export default {
       action: 'product-rating-change'
     }
   },
-  render: (args) => html`<rating-container
-    product-id=${args.productId}
-    rating=${args.rating}
-    ?clickable=${args.clickable}
-    @product-rating-change=${args.productRatingChange}
-  ></rating-container>`
+  render: (args) =>
+    html`<rating-container
+      product-id=${args.productId}
+      rating=${args.rating}
+      ?clickable=${args.clickable}
+      @product-rating-change=${args.productRatingChange}
+    ></rating-container>`
 };
 
 export const Default = {};
