@@ -24,6 +24,6 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div data-testid="{dataTestId}" on:click="{handleStarClick}">
-  <Icon icon="{icon}" class="{checked ? 'checked' : ''} {clickable ? 'action' : ''}" />
+<div data-testid="{dataTestId}" role="button" tabindex="0" on:click="{handleStarClick}">
+  <Icon {icon} class="{checked ? 'checked' : ''} {clickable ? 'action' : ''}" />
 </div>

@@ -23,7 +23,7 @@
 <h1>{products.map((p) => p.title).join(' - ')}</h1>
 <main data-testid="products" class="responsive-container">
   {#each products as product}
-    <ProductSatisfaction product="{product}" on:productRatingChange="{handeProductRatingChange}" />
+    <ProductSatisfaction {product} on:productRatingChange="{handeProductRatingChange}" />
   {/each}
   <OverallSatisfaction rating="{overallRating}" />
 </main>

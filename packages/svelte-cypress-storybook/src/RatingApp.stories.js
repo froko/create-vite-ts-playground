@@ -31,13 +31,13 @@ export const Default = {
     const canvas = within(canvasElement);
     expect(canvas.getByText('Vite - Storybook')).toBeInTheDocument();
 
-    userEvent.click(canvas.getByTestId('vite-1'));
-    userEvent.click(canvas.getByTestId('storybook-1'));
+    await userEvent.click(canvas.getByTestId('vite-1'));
+    await userEvent.click(canvas.getByTestId('storybook-1'));
     const overallSatisfaction2 = await canvas.findByTestId('overall-satisfaction-2');
     expect(overallSatisfaction2.firstElementChild).not.toHaveClass('checked');
 
-    userEvent.click(canvas.getByTestId('vite-4'));
-    userEvent.click(canvas.getByTestId('storybook-4'));
+    await userEvent.click(canvas.getByTestId('vite-4'));
+    await userEvent.click(canvas.getByTestId('storybook-4'));
     const overallSatisfaction5 = await canvas.findByTestId('overall-satisfaction-5');
     expect(overallSatisfaction5.firstElementChild).not.toHaveClass('checked');
   }

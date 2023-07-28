@@ -4,6 +4,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:svelte/recommended',
     'prettier'
   ],
   parserOptions: {
@@ -20,16 +21,13 @@ module.exports = {
   overrides: [
     {
       files: ['*.svelte'],
-      processor: 'svelte3/svelte3'
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser'
+      }
     }
   ],
-  settings: {
-    'svelte3/typescript': require('typescript'),
-    // ignore style tags in Svelte because of Tailwind CSS
-    // See https://github.com/sveltejs/eslint-plugin-svelte3/issues/70
-    'svelte3/ignore-styles': () => true
-  },
-  plugins: ['@typescript-eslint', 'eslint-plugin-import', 'svelte3', 'prettier'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-import', 'prettier'],
   rules: {
     '@typescript-eslint/no-unused-vars': [
       'warn',

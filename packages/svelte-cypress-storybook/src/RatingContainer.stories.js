@@ -17,13 +17,13 @@ export default {
 };
 
 export const Default = {
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const thirdStar = canvas.getByTestId('storybook-3');
     const fourthStar = canvas.getByTestId('storybook-4');
     expect(thirdStar.firstElementChild).toHaveClass('checked');
     expect(fourthStar.firstElementChild).not.toHaveClass('checked');
-    userEvent.click(fourthStar);
+    await userEvent.click(fourthStar);
     expect(args.productRatingChange).not.toHaveBeenCalled();
   }
 };
@@ -32,13 +32,13 @@ export const Disappointed = {
   args: {
     rating: 1
   },
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const firstStar = canvas.getByTestId('storybook-1');
     const secondStar = canvas.getByTestId('storybook-2');
     expect(firstStar.firstElementChild).toHaveClass('checked');
     expect(secondStar.firstElementChild).not.toHaveClass('checked');
-    userEvent.click(secondStar);
+    await userEvent.click(secondStar);
     expect(args.productRatingChange).not.toHaveBeenCalled();
   }
 };
@@ -47,12 +47,12 @@ export const VerySatisfied = {
   args: {
     rating: 5
   },
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const fifthStar = canvas.getByTestId('storybook-5');
     expect(fifthStar.firstElementChild).toHaveClass('checked');
     const fourthStar = canvas.getByTestId('storybook-4');
-    userEvent.click(fourthStar);
+    await userEvent.click(fourthStar);
     expect(args.productRatingChange).not.toHaveBeenCalled();
   }
 };
@@ -61,10 +61,10 @@ export const Clickable = {
   args: {
     clickable: true
   },
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const fourthStar = canvas.getByTestId('storybook-4');
-    userEvent.click(fourthStar);
+    await userEvent.click(fourthStar);
     expect(args.productRatingChange).toHaveBeenCalledWith(
       expect.objectContaining({
         detail: { productId: 'storybook', rating: 4 }

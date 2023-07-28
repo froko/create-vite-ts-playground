@@ -8,5 +8,5 @@
 <section data-testid="overall-satisfaction" class="overall-satisfaction">
   <h2>Overall Satisfaction</h2>
   <span></span>
-  <RatingContainer productId="overall-satisfaction" rating="{rating}" />
+  <RatingContainer productId="overall-satisfaction" {rating} />
 </section>
