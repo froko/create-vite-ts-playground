@@ -19,14 +19,14 @@ export default {
   }
 };
 
-const clickOnStar = (canvasElement) => {
+const clickOnStar = async (canvasElement) => {
   const canvas = within(canvasElement);
-  userEvent.click(canvas.getByTestId('storybook-1'));
+  await userEvent.click(canvas.getByTestId('storybook-1'));
 };
 
 export const Default = {
-  play: ({ args, canvasElement }) => {
-    clickOnStar(canvasElement);
+  play: async ({ args, canvasElement }) => {
+    await clickOnStar(canvasElement);
     expect(args.starClick).not.toHaveBeenCalled();
   }
 };
@@ -35,8 +35,8 @@ export const Checked = {
   args: {
     checked: true
   },
-  play: ({ args, canvasElement }) => {
-    clickOnStar(canvasElement);
+  play: async ({ args, canvasElement }) => {
+    await clickOnStar(canvasElement);
     expect(args.starClick).not.toHaveBeenCalled();
   }
 };
@@ -46,8 +46,8 @@ export const Clickable = {
   args: {
     clickable: true
   },
-  play: ({ args, canvasElement }) => {
-    clickOnStar(canvasElement);
+  play: async ({ args, canvasElement }) => {
+    await clickOnStar(canvasElement);
     expect(args.starClick).toHaveBeenCalledWith({
       productId: 'storybook',
       rating: 1
@@ -61,8 +61,8 @@ export const CheckedAndClickable = {
     clickable: true,
     checked: true
   },
-  play: ({ args, canvasElement }) => {
-    clickOnStar(canvasElement);
+  play: async ({ args, canvasElement }) => {
+    await clickOnStar(canvasElement);
     expect(args.starClick).toHaveBeenCalledWith({
       productId: 'storybook',
       rating: 1
