@@ -19,13 +19,13 @@ export default {
 };
 
 export const Default = {
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const thirdStar = canvas.getByTestId('storybook-3');
     const fourthStar = canvas.getByTestId('storybook-4');
     expect(thirdStar).toHaveClass('text-orange-500');
     expect(fourthStar).not.toHaveClass('text-orange-500');
-    userEvent.click(fourthStar);
+    await userEvent.click(fourthStar);
     expect(args.onProductRatingChange).not.toHaveBeenCalled();
   }
 };
@@ -34,13 +34,13 @@ export const Disappointed = {
   args: {
     rating: 1
   },
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const firstStar = canvas.getByTestId('storybook-1');
     const secondStar = canvas.getByTestId('storybook-2');
     expect(firstStar).toHaveClass('text-orange-500');
     expect(secondStar).not.toHaveClass('text-orange-500');
-    userEvent.click(secondStar);
+    await userEvent.click(secondStar);
     expect(args.onProductRatingChange).not.toHaveBeenCalled();
   }
 };
@@ -49,12 +49,12 @@ export const VerySatisfied = {
   args: {
     rating: 5
   },
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const fifthStar = canvas.getByTestId('storybook-5');
     expect(fifthStar).toHaveClass('text-orange-500');
     const fourthStar = canvas.getByTestId('storybook-4');
-    userEvent.click(fourthStar);
+    await userEvent.click(fourthStar);
     expect(args.onProductRatingChange).not.toHaveBeenCalled();
   }
 };
@@ -63,10 +63,10 @@ export const Clickable = {
   args: {
     clickable: true
   },
-  play: ({ args, canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const fourthStar = canvas.getByTestId('storybook-4');
-    userEvent.click(fourthStar);
+    await userEvent.click(fourthStar);
     expect(args.onProductRatingChange).toHaveBeenCalledWith({
       productId: 'storybook',
       rating: 4
