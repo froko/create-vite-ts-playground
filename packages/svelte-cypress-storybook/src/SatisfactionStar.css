@@ -13,3 +13,7 @@
 .action:hover {
   color: var(--orange700);
 }
+
+div[role='button'] {
+  outline: none;
+}
