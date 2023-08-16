@@ -1,8 +1,0 @@
-{
-  "recommendations": [
-    "editorconfig.editorconfig",
-    "rvest.vs-code-prettier-eslint",
-    "svelte.svelte-vscode",
-    "ms-playwright.playwright"
-  ]
-}
